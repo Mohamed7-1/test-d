@@ -1,0 +1,1044 @@
+{\rtf1\ansi\ansicpg1252\deff0\nouicompat\deflang1036{\fonttbl{\f0\fnil\fcharset0 Calibri;}}
+{\colortbl ;\red0\green0\blue255;}
+{\*\generator Riched20 10.0.19041}\viewkind4\uc1 
+\pard\sa200\sl276\slmult1\f0\fs22\lang9 #include <stdio.h>\par
+#include <stdlib.h>\par
+#include <ctype.h>\par
+#include <string.h>\par
+#include <unistd.h>\par
+#include <windows.h>\par
+#include <time.h>\par
+\par
+#define UP_ARROW    72\par
+#define DOWN_ARROW  80\par
+#define ENTER       13\par
+\par
+void printMenu3(int menu2 ) \{\par
+     printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("------------------------------------------------<      Rejouer     >----------------------------------------------------\\n\\n");\par
+    printf("------------------------------------------------<       Score      >----------------------------------------------------\\n\\n");\par
+    printf("------------------------------------------------<      Quitter     >----------------------------------------------------\\n\\n");\par
+\par
+    switch (menu2) \{\par
+        case 1:\par
+           system("cls");\par
+           printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+           col(6);\par
+             printf("------------------------------------------------<      Rejouer     >----------------------------------------------------\\n\\n");\par
+             col(7);\par
+             printf("------------------------------------------------<       Score      >----------------------------------------------------\\n\\n");\par
+             printf("------------------------------------------------<      Quitter     >----------------------------------------------------\\n\\n");\par
+\par
+            break;\par
+        case 2:\par
+            system("cls");\par
+            printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+              printf("------------------------------------------------<      Rejouer     >----------------------------------------------------\\n\\n");\par
+              col(6);\par
+              printf("------------------------------------------------<       Score      >----------------------------------------------------\\n\\n");\par
+              col(7);\par
+              printf("------------------------------------------------<      Quitter     >----------------------------------------------------\\n\\n");\par
+\par
+            break;\par
+        case 3:\par
+             system("cls");\par
+             printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+              printf("------------------------------------------------<      Rejouer     >----------------------------------------------------\\n\\n");\par
+              printf("------------------------------------------------<       Score      >----------------------------------------------------\\n\\n");\par
+              col(6);\par
+              printf("------------------------------------------------<      Quitter     >----------------------------------------------------\\n\\n");\par
+              col(7);\par
+\par
+            break;\par
+    \}\par
+\}\par
+\par
+void printMenu2(int menu ) \{\par
+     printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("------------------------------------------------<    Commencer     >----------------------------------------------------\\n\\n");\par
+    printf("------------------------------------------------<   Regle de jeu   >----------------------------------------------------\\n\\n");\par
+    printf("------------------------------------------------<      Score       >----------------------------------------------------\\n\\n");\par
+\par
+    switch (menu) \{\par
+        case 1:\par
+           system("cls");\par
+           printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+           col(6);\par
+             printf("------------------------------------------------<    Commencer     >----------------------------------------------------\\n\\n");\par
+             col(7);\par
+             printf("------------------------------------------------<   Regle de jeu   >----------------------------------------------------\\n\\n");\par
+             printf("------------------------------------------------<      Score       >----------------------------------------------------\\n\\n");\par
+\par
+            break;\par
+        case 2:\par
+            system("cls");\par
+            printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+              printf("------------------------------------------------<    Commencer     >----------------------------------------------------\\n\\n");\par
+              col(6);\par
+              printf("------------------------------------------------<   Regle de jeu   >----------------------------------------------------\\n\\n");\par
+              col(7);\par
+              printf("------------------------------------------------<      Score       >----------------------------------------------------\\n\\n");\par
+\par
+            break;\par
+        case 3:\par
+             system("cls");\par
+             printf("\\n\\n\\n\\n\\n\\n\\n\\n");\par
+              printf("------------------------------------------------<    Commencer     >----------------------------------------------------\\n\\n");\par
+              printf("------------------------------------------------<   Regle de jeu   >----------------------------------------------------\\n\\n");\par
+              col(6);\par
+              printf("------------------------------------------------<      Score       >----------------------------------------------------\\n\\n");\par
+              col(7);\par
+\par
+            break;\par
+    \}\par
+\}\par
+\par
+void printMenu(int selectedOption ) \{\par
+    printf("\\n\\n\\n\\n\\n");\par
+    printf("------------------------------------------------<. Niveau 1 >-----------------------------------------------------------\\n\\n");\par
+    printf("------------------------------------------------<. Niveau 2 >-----------------------------------------------------------\\n\\n");\par
+    printf("------------------------------------------------<. Niveau 3 >-----------------------------------------------------------\\n\\n");\par
+     printf("\\n");\par
+   printf("---Choisissez le niveau dans lequel vous souhaitez jouer ");\par
+\par
+    switch (selectedOption) \{\par
+        case 1:\par
+           system("cls");\par
+           printf("\\n\\n\\n\\n\\n");\par
+           col(6);\par
+             printf("------------------------------------------------<. Niveau 1 >-----------------------------------------------------------\\n\\n");\par
+             col(7);\par
+             printf("------------------------------------------------<. Niveau 2 >-----------------------------------------------------------\\n\\n");\par
+             printf("------------------------------------------------<. Niveau 3 >-----------------------------------------------------------\\n\\n");\par
+                 printf("\\n");\par
+   printf("---Choisissez le niveau dans lequel vous souhaitez jouer ");\par
+\par
+            break;\par
+        case 2:\par
+            system("cls");\par
+            printf("\\n\\n\\n\\n\\n");\par
+              printf("------------------------------------------------<. Niveau 1 >-----------------------------------------------------------\\n\\n");\par
+              col(6);\par
+              printf("------------------------------------------------<. Niveau 2 >-----------------------------------------------------------\\n\\n");\par
+              col(7);\par
+              printf("------------------------------------------------<. Niveau 3 >-----------------------------------------------------------\\n\\n");\par
+                  printf("\\n");\par
+   printf("---Choisissez le niveau dans lequel vous souhaitez jouer ");\par
+\par
+            break;\par
+        case 3:\par
+             system("cls");\par
+             printf("\\n\\n\\n\\n\\n");\par
+              printf("------------------------------------------------<. Niveau 1 >-----------------------------------------------------------\\n\\n");\par
+              printf("------------------------------------------------<. Niveau 2 >-----------------------------------------------------------\\n\\n");\par
+              col(6);\par
+              printf("------------------------------------------------<. Niveau 3 >-----------------------------------------------------------\\n\\n");\par
+              col(7);\par
+                  printf("\\n");\par
+   printf("---Choisissez le niveau dans lequel vous souhaitez jouer ");\par
+\par
+            break;\par
+    \}\par
+\}\par
+ // fonction de couleur\par
+int col(int C) \{\par
+    HANDLE h = GetStdHandle(STD_OUTPUT_HANDLE);\par
+    return SetConsoleTextAttribute(h, C);\}\par
+\par
+\par
+void printLetterByLetter(const char *text, int delay) \{\par
+    for (int i = 0; text[i] != '\\0'; i++) \{\par
+        printf("%c", text[i]);\par
+        fflush(stdout); // Flush the output buffer to ensure the character is immediately printed\par
+        usleep(delay * 1000); // Sleep for 'delay' milliseconds\par
+    \}\par
+\}\par
+\par
+void Joker2(int *CASE, int *tentative, int *utilise, char *numbrepourappelezlejoker, char U[6]) \{\par
+    // V\'e9rification si le Joker est activ\'e9\par
+    if (*numbrepourappelezlejoker == '#') \{\par
+        // V\'e9rification si le Joker n'a pas \'e9t\'e9 utilis\'e9 pr\'e9c\'e9demment\par
+        if (*utilise == 0) \{\par
+            // Boucle pour demander \'e0 l'utilisateur la case o\'f9 il veut utiliser le Joker\par
+            while (*tentative >= 10 && *tentative <= 17) \{\par
+                printf("A quelle Case (1/5) tu peux utiliser le");\par
+                col(11);\par
+                printf(" Joker : ");\par
+                col(7);\par
+                scanf("%d", CASE);\par
+                *CASE = *CASE - 1;\par
+                // V\'e9rification si la case est valide\par
+                if (*CASE >= 0 && *CASE <= 4) \{\par
+                    printf("Le chiffre est '%c'\\n ", U[*CASE]);\par
+                    (*utilise)++;\par
+                    *tentative = *tentative + 3;\par
+                    break;\par
+                \} else \{\par
+                    printf("Choix invalide\\n");\par
+                \}\par
+            \}\par
+        \} else \{\par
+            // Message si le Joker a d\'e9j\'e0 \'e9t\'e9 utilis\'e9\par
+            printf("Desole, le");\par
+            col(11);\par
+            printf(" joker");\par
+            col(7);\par
+            printf(" ne peut pas etre utilise plus d'une fois\\n");\par
+        \}\par
+    \}\par
+\}\par
+\par
+void Joker(int *CASE, int *tentative, int *utilise, int *numbrepourappelezlejoker, int U[5]) \{\par
+    if (*numbrepourappelezlejoker == 99) \{\par
+        if (*utilise == 0) \{\par
+            while (*tentative >= 10 && *tentative <= 17) \{\par
+                printf("A quelle Case (1/5) tu peux utiliser le");\par
+                col(11);\par
+                printf(" Joker : ");\par
+                col(7);\par
+                scanf("%d", CASE);\par
+                *CASE = *CASE - 1;\par
+                if (*CASE >= 0 && *CASE <= 4) \{\par
+                    printf("Le chiffre est %d\\n", U[*CASE]);\par
+                    (*utilise)++;\par
+                    *tentative = *tentative + 3;\par
+                    break;\par
+                \} else \{\par
+                    printf("Choix invalide\\n");\par
+                \}\par
+            \}\par
+        \} else \{\par
+            printf("Desole, le");\par
+            col(11);\par
+            printf(" joker");\par
+            col(7);\par
+            printf(" ne peut pas etre utilise plus d'une fois\\n");\par
+        \}\par
+    \}\par
+\}\par
+\par
+int chiffredejautilise(int code[], int chiffre, int index) \{\par
+    // Boucle pour parcourir le tableau\par
+    int i;\par
+    for (i = 0; i < index; i++) \{\par
+        // V\'e9rification si le chiffre est d\'e9j\'e0 pr\'e9sent dans le tableau\par
+        if (code[i] == chiffre) \{\par
+            return 1; // Chiffre d\'e9j\'e0 utilis\'e9\par
+        \}\par
+    \}\par
+    return 0; // Chiffre non utilis\'e9\par
+\}\par
+\par
+int main() \{\par
+    char nom1[20],nom2[20];\par
+    int delay = 100, niveau , Score,PLACEHOLDER2,PLACEHOLDER;\par
+    PLACEHOLDER = 1000;\par
+    PLACEHOLDER2 = 9999 ;\par
+    time_t s,val=1;\par
+struct tm* current_time;\par
+  //time in seconde\par
+s = time(NULL);\par
+  //to get the current time\par
+current_time = localtime(&s);\par
+   //print time in minute\par
+   //hours and seconds\par
+col(6);\par
+  // Affichage d'un logo en ASCII art\par
+printf("\\t  __  __    ___     ___    _____    ___     ___            __  __    ___    _  _     ___   \\n");\par
+printf("\\t |  {{\field{\*\fldinst{HYPERLINK "\\\\\\\\/"}}{\fldrslt{\\\\/\ul0\cf0}}}}\f0\fs22   |  /   \\\\   / _|  |   |  | __|   | _ \\\\     o O O|  {{\field{\*\fldinst{HYPERLINK "\\\\\\\\/"}}{\fldrslt{\\\\/\ul0\cf0}}}}\f0\fs22   |  | _|  | {{\field{\*\fldinst{HYPERLINK "\\\\\\\\|"}}{\fldrslt{\\\\|\ul0\cf0}}}}\f0\fs22  |   |   \\\\  \\n");\par
+printf("\\t | |\\\\/| |  | - |   {{\field{\*\fldinst{HYPERLINK "\\\\\\\\__"}}{\fldrslt{\\\\__\ul0\cf0}}}}\f0\fs22  \\\\    | |    | _|    |   /    o     | |\\\\/| |   | |   | .` |   | |) | \\n");\par
+printf("\\t ||__|_|  |_|_|   |___/   _|_|   |__|   |_|_\\\\   TS_[O]|_|__|_|  |___|  |_|\\\\_|   |___/  \\n");\par
+printf("\\t _|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"| \{======|_|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"|_|\\"\\"\\"\\"\\"| \\n");\par
+printf("\\t  -0-0-'\\"-0-0-'\\"-0-0-'\\"-0-0-'\\"-0-0-'\\"-0-0-'./o--000'\\"-0-0-'\\"-0-0-'\\"-0-0-'\\"-0-0-' \\n");\par
+\par
+\par
+col(7);\par
+     printf("\\n\\n");\par
+     printf("\\t\\t\\t\\t");\par
+     char message1[] ="Bonjour jouer 1, Quel est votre nom :";\par
+     printLetterByLetter(message1, delay);\par
+    scanf("%s", &nom1);\par
+\par
+    printf("\\n");\par
+    printf("\\t\\t\\t\\t\\t");\par
+     char message2[] ="Bonjour jouer 2, Quel est votre nom :";\par
+     printLetterByLetter(message2, delay);\par
+    scanf("%s", &nom2);\par
+do \{\par
+        int key2, menu = 1;\par
+        begin :\par
+\par
+    do \{\par
+        system("cls");\par
+\par
+        printMenu2(menu);\par
+\par
+        key2 = getch();\par
+\par
+        switch (key2) \{\par
+            case UP_ARROW:\par
+                menu = (menu > 1) ? (menu - 1) : 3;\par
+                break;\par
+            case DOWN_ARROW:\par
+                menu = (menu < 3) ? (menu + 1) : 1;\par
+                break;\par
+\par
+        \}\par
+\par
+    \} while (key2 != ENTER);\par
+if (menu == 1)\{\par
+\par
+\}\par
+else if (menu == 2)\{\par
+system("cls");\par
+col(6);\par
+printf("----------------------------------------------< Master Mind >-----------------------------------------------------------\\n");\par
+col(7);printf("est un jeu qui necessite 2 joueurs :\\n");\par
+    printf("---Joueur 1 : Il choisira le niveau et 5 chiffres .\\n");\par
+    printf("---Joueur 2 : Il doit deviner les  5 chiffres sont en moins de 21 tantatives .\\n");\par
+    printf("et a chaque tentative, le jeu lui montrera combien il a ete bien place et mal place .\\n\\n");\par
+col(6);\par
+printf("--------------------------------------------------< Niveau >------------------------------------------------------------\\n");col(7);\par
+       printf("Il y a 3 niveau dans Master Mind :\\n");\par
+           printf("---Niveau 1 (Debutant) : Tous les chiffres du code sont distincts .\\n");\par
+           printf("---Niveau 2 ( Expert )  : Les chiffres peuvent se repeter .\\n");\par
+           printf("---Niveau 3 (legende )  : Les chiffres peuvent se repeter et Vous pouvez utiliser le Vide (espace) .\\n\\n"); col(6);\par
+printf("-------------------------------------------------< le joker >-----------------------------------------------------------\\n");col(7);\par
+      printf("Le joker est votre carte gagnante pour connaitre un des chiffres du Jouer 2\\n");\par
+      printf("Mais il peut etre utilise une fois Et tu perdras trois tentatives .\\n");\par
+      printf("Tu peux appeler le joker par d'entrer le nombre magic .\\n\\n"); col(6);\par
+printf("----------------------------------------------< Le nombre magic >-------------------------------------------------------\\n");col(7);\par
+      printf("Il y a deux nombre magic :\\n");\par
+            printf("---Niveau 1/2 : nombre magic =  99  .\\n");\par
+            printf("---Niveau  3  : nombre magic =  #   .\\n\\n");\par
+            col(6);\par
+printf("-------------------------------------------------< Le Score >-----------------------------------------------------------\\n");col(7);\par
+printf("Le calcul des points est le suivant :\\n");\par
+printf("---Niveau 1 : 200p dans le debut , Et vous en perdrez 10 a chaque tentative .\\n");\par
+printf("---Niveau 2 : 400p dans le debut , Et vous en perdrez 20 a chaque tentative .\\n");\par
+printf("---Niveau 3 : 500p dans le debut , Et vous en perdrez 25 a chaque tentative .\\n");\par
+printf("                                                                                                    By AIMANE.ABOUFADLE\\n");\par
+            system("pause");\par
+goto begin ;\par
+\}else if (menu == 3)\{\par
+  system("cls");\par
+   FILE *fichier; // if he choose score this will read the score from the file and show it to him\par
+  fichier = fopen("score.txt", "r");\par
+    if (fichier == NULL)\{\par
+        printf("error");\par
+        exit(EXIT_FAILURE);\par
+    \}\par
+char line[100];\par
+\par
+if (fscanf(fichier,"%s",line) !=1)\{\par
+    printf("error2");\par
+    exit(EXIT_FAILURE);\par
+\} while (fscanf(fichier, " %[^\\n]", line) == 1) \{ //read all the lines and show it\par
+        printf("%s\\n", line);col(6);\par
+        printf("|---------------|------------------------|----------------------|-------------------------|----------------------------|\\n");col(7);\}\par
+fclose(fichier);col(9);\par
+        printf("    Jouer 1              Jouer 2                 Score                    Niveau                Le temps ou il a joue\\n");col(6);// show him what each one means\par
+        printf("|---------------|------------------------|----------------------|-------------------------|----------------------------|\\n");col(7);\par
+system("pause");\par
+goto begin;\par
+    \}\par
+        system("cls");\par
+   int key, selectedOption = 1;\par
+\par
+    do \{\par
+        system("cls");\par
+        printMenu(selectedOption);\par
+\par
+        key = getch();\par
+\par
+        switch (key) \{\par
+            case UP_ARROW:\par
+                selectedOption = (selectedOption > 1) ? (selectedOption - 1) : 3;\par
+                break;\par
+            case DOWN_ARROW:\par
+                selectedOption = (selectedOption < 3) ? (selectedOption + 1) : 1;\par
+                break;\par
+\par
+        \}\par
+\par
+    \} while (key != ENTER);\par
+\par
+\par
+system("cls");\par
+    if (selectedOption == 1) \{\par
+        int U[5], V[5];\par
+        int i, B, M, tentative, d, utilise, chiffre, CASE;\par
+\par
+        utilise = 0;\par
+        Score = 200;\par
+          col(4);\par
+printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    sleep(1);\par
+    system("cls");\par
+    col(6);\par
+    printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##        \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##        \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t######### \\n");\par
+    sleep(1);\par
+    system("cls");\par
+    col(2);\par
+  printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t ####   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t ###### \\n");\par
+    sleep(1);\par
+    system("cls");\par
+col(7);\par
+        printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+        printf("\\t\\t\\t\\t\\##      ## ######## ##        ######   #######  ##     ## ######## \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##    ## ##     ## ###   ### ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##       ##     ## #### #### ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ######   ##       ##       ##     ## ## ### ## ######   \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##       ##     ## ##     ## ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##    ## ##     ## ##     ## ##       \\n");\par
+        printf("\\t\\t\\t\\t\\ ###  ###  ######## ########  ######   #######  ##     ## ######## \\n\\n\\n\\n");\par
+        sleep(1);\par
+        system("cls");\par
+        printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+        printf("\\t\\t\\t\\t\\##    ## #### ##     ## ########    ###    ##     ##");\par
+        col(10);\par
+        printf("       ##\\n");\par
+        col(7);\par
+        printf("\\t\\t\\t\\t\\####  ##  ##  ##     ## ##        ##   ##  ##     ##");\par
+        col(10);\par
+        printf("     ####\\n");\par
+         col(7);\par
+         printf("\\t\\t\\t\\t\\####  ##  ##  ##     ## ##        ##   ##  ##     ##");\par
+         col(10);\par
+         printf("       ##\\n");\par
+          col(7);\par
+        printf("\\t\\t\\t\\t\\## ## ##  ##  ##     ## ######   ##     ## ##     ##");\par
+        col(10);\par
+        printf("       ##\\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\##  ####  ##   ##   ##  ##       ######### ##     ##");\par
+        col(10);\par
+        printf("       ##\\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\##   ###  ##    ## ##   ##       ##     ## ##     ##");\par
+        col(10);\par
+        printf("       ##\\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\##    ## ####    ###    ######## ##     ##  #######");\par
+        col(10);\par
+        printf("      ######\\n");\par
+         col(7);\par
+         printf("\\n\\n\\n");\par
+         system("pause");\par
+        system("cls");\par
+        printf("Bonjour Joueur 1, entrez les 5 valeurs du tableau U:\\n");\par
+        for (i = 0; i < 5; i++) \{\par
+            do \{\par
+                printf("-----");col(6); printf("> ");col(7);\par
+                scanf("%d", &chiffre);\par
+                while(chiffre > 9 ||  chiffre < 0)\{\par
+                        printf("Error , Vous pouvez seulement choisir des chiffres(0-9) :\\n");\par
+                         printf("-----");col(6); printf("> ");col(7);\par
+                        scanf("%d", &chiffre);\}\par
+                if (chiffredejautilise(U, chiffre, i)) \{\par
+                    printf("Chiffre deje utilise. Entrer un chiffre different: \\n");\par
+                \}\par
+            \} while (chiffredejautilise(U, chiffre, i));\par
+            U[i] = chiffre;\par
+        \}\par
+system("cls");\par
+        printf("Bonjour Joueur 2\\n");\par
+\par
+        tentative = 1;\par
+\par
+        do \{\par
+            B = 0;\par
+            M = 0;\par
+\par
+            printf("Essayez de deviner les chiffres du tableau U");\par
+            col(13);\par
+            printf(" (%d/20)\\n", tentative);\par
+            col(7);\par
+            for (i = 0; i < 5; i++) \{\par
+                do \{\par
+                  printf("-----");col(6); printf("> ");col(7);\par
+                    scanf("%d", &chiffre);\par
+                    while((chiffre > 9 ||  chiffre < 0) && chiffre != 99)\{\par
+                         printf("Error , Vous pouvez seulement choisir des chiffres(0-9) :\\n");\par
+                         printf("-----");col(6); printf("> ");col(7);\par
+                         scanf("%d", &chiffre);\par
+                    \}\par
+\par
+                    while (chiffre == 99) \{\par
+                        if (tentative >= 10 && tentative <= 17) \{\par
+                            Joker(&CASE, &tentative, &utilise, &chiffre, U);\par
+                          printf("-----");col(6); printf("> ");col(7);\par
+                            scanf("%d", &chiffre);\par
+                        \} else \{\par
+                            printf("Desole, Vous ne pouvez pas utiliser le joker dans ce tentative\\n");\par
+                            printf("-----");col(6); printf("> ");col(7);\par
+                            scanf("%d", &chiffre);\par
+                        \}\par
+                    \}\par
+\par
+                    if (chiffredejautilise(V, chiffre, i)) \{\par
+                        printf("Chiffre d\'e9j\'e0 utilise. Entrer un chiffre different: \\n");\par
+                    \}\par
+                \} while (chiffredejautilise(V, chiffre, i));\par
+                V[i] = chiffre;\par
+\par
+                if (V[i] == U[i]) \{\par
+                    B++;\par
+                \} else \{\par
+                    for (d = 0; d < 5; d++) \{\par
+                        if (V[i] == U[d] && V[i] != U[i]) \{\par
+                            V[d] = PLACEHOLDER;\par
+                            M++;\par
+                            break;\par
+                        \}\par
+                    \}\par
+                \}\par
+            \}\par
+\par
+            if (B == 5) \{\par
+                printf("F\'e9licitations, c'est ");\par
+                col(2);\par
+                 printf("correct!\\n");\par
+                 col(7);\par
+            \} else \{\par
+                 printf("Il y'a");\par
+        col(2);\par
+        printf(" %d",B);\par
+        col(7);\par
+        printf(" nombres");\par
+        col(2);\par
+        printf(" bien");\par
+        col(7);\par
+        printf(" places\\n");\par
+        printf("Il y'a");\par
+        col(4);\par
+        printf(" %d",M);\par
+        col(7);\par
+        printf(" nombres",M);\par
+        col(4);\par
+        printf(" mal");\par
+        col(7);\par
+        printf(" places\\n", M);\par
+                if (tentative < 20) \{\par
+                    tentative++;\par
+                    Score = Score - 10;\par
+                \} else \{\par
+                    printf("Tu as");\par
+            col(4);\par
+            printf(" perdu");\par
+            col(7);\par
+            printf(", bonne chance la prochaine fois\\n");\par
+            Score = Score - 10;\par
+                    break;\par
+                \}\par
+            \}\par
+\par
+        \} while (B!=5 && tentative <= 20);\par
+\par
+    \} else if (selectedOption == 2) \{\par
+int U[5], V[5];\par
+    int i, B, M, tantative, d ,utilise, chiffre2, CASE;\par
+    tantative = 1;\par
+utilise = 0;\par
+Score = 400;\par
+  col(4);\par
+printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    sleep(1);\par
+    system("cls");\par
+    col(6);\par
+    printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##        \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##        \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t######### \\n");\par
+    sleep(1);\par
+    system("cls");\par
+    col(2);\par
+  printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t ####   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t ###### \\n");\par
+    sleep(1);\par
+    system("cls");\par
+    col(7);\par
+printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+        printf("\\t\\t\\t\\t\\##      ## ######## ##        ######   #######  ##     ## ######## \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##    ## ##     ## ###   ### ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##       ##     ## #### #### ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ######   ##       ##       ##     ## ## ### ## ######   \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##       ##     ## ##     ## ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##    ## ##     ## ##     ## ##       \\n");\par
+        printf("\\t\\t\\t\\t\\ ###  ###  ######## ########  ######   #######  ##     ## ######## \\n\\n\\n\\n");\par
+sleep(1);\par
+system("cls");\par
+printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+ printf("\\t\\t\\t\\t\\##    ## #### ##     ## ########    ###    ##     ##");\par
+        col(6);\par
+        printf("     #######  \\n");\par
+        col(7);\par
+        printf("\\t\\t\\t\\t\\###   ##  ##  ##     ## ##         ## ##   ##     ##");\par
+        col(6);\par
+        printf("    ##     ## \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\####  ##  ##  ##     ## ##        ##   ##  ##     ##");\par
+        col(6);\par
+        printf("           ## \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\## ## ##  ##  ##     ## ######   ##     ## ##     ##");\par
+        col(6);\par
+        printf("     #######  \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\##  ####  ##   ##   ##  ##       ######### ##     ##");\par
+        col(6);\par
+        printf("    ##        \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\##   ###  ##    ## ##   ##       ##     ## ##     ##");\par
+        col(6);\par
+        printf("    ##        \\n");\par
+         col(7);\par
+          printf("\\t\\t\\t\\t\\##    ## ####    ###    ######## ##     ##  ####### ");\par
+        col(6);\par
+        printf("    #########  \\n");\par
+         col(7);\par
+          printf("\\n\\n\\n");\par
+system("pause");\par
+system("cls");\par
+    printf("Bonjour Joueur 1, entrez les 5 valeurs du tableau U:\\n");\par
+    for (i = 0; i < 5; i++) \{\par
+        printf("-----");col(6); printf("> ");col(7);\par
+        scanf("%d", &U[i]);\par
+        while(U[i] > 9 ||  U[i] < 0)\{\par
+                        printf("Error , Vous pouvez seulement choisir des chiffres(0-9) :\\n");\par
+                        printf("-----");col(6); printf("> ");col(7);\par
+                        scanf("%d", &U[i]);\}\par
+    \}\par
+\par
+    system("cls");\par
+\par
+    printf("Bonjour Joueur 2\\n");\par
+\par
+    AGAIN:\par
+    B = 0;\par
+    M = 0;\par
+\par
+    printf("Essayez de deviner les chiffres du tableau U");\par
+    col(13);\par
+    printf(" (%d/20)\\n", tantative);\par
+    col(7);\par
+\par
+    for (i = 0; i < 5; i++) \{\par
+        printf("-----");col(6); printf("> ");col(7);\par
+        scanf("%d", &chiffre2);\par
+         while((chiffre2 > 9 ||  chiffre2 < 0) && chiffre2 != 99)\{\par
+                        printf("Error , Vous pouvez seulement choisir des chiffres(0-9) :\\n");\par
+                        printf("-----");col(6); printf("> ");col(7);\par
+                        scanf("%d", &chiffre2);\}\par
+        while (chiffre2==99)\{\par
+        if (tantative >= 10 && tantative <= 17 ) \{\par
+            Joker(&CASE, &tantative, &utilise, &chiffre2, U);\par
+          printf("-----");col(6); printf("> ");col(7);\par
+            scanf("%d", &chiffre2);\par
+        \}\par
+        else \{\par
+            printf("desole , Vous ne pouvez pas utiliser le joker dans ce tantative\\n");\par
+           printf("-----");col(6); printf("> ");col(7);\par
+            scanf("%d", &chiffre2);\par
+        \}\}\par
+        V[i] = chiffre2;\par
+\par
+        if (U[i] == V[i]) \{\par
+            V[i] = PLACEHOLDER2;\par
+            B++;\par
+        \}\par
+    \}\par
+   // Check for numbers in the wrong position\par
+for (i = 0; i < 5; i++) \{\par
+    if (U[i] != V[i]) \{\par
+        for (d = 0; d < 5; d++) \{\par
+            if (U[i] == V[d] && d != i && V[d] != PLACEHOLDER2 && V[i] != PLACEHOLDER2) \{\par
+                // Check if the number is not already marked as correctly placed (B)\par
+                V[d] = PLACEHOLDER;\par
+                M++;\par
+                break;\par
+            \}\par
+        \}\par
+    \}\par
+\}\par
+\par
+     if (B == 5) \{\par
+                printf("F\'e9licitations, c'est ");\par
+                col(2);\par
+                 printf("correct!\\n");\par
+                 col(7);\par
+        printf("Il y'a");\par
+        col(2);\par
+        printf(" %d",B);\par
+        col(7);\par
+        printf(" nombres");\par
+        col(2);\par
+        printf(" bien");\par
+        col(7);\par
+        printf(" places\\n");\par
+        printf("Il y'a");\par
+        col(4);\par
+        printf(" %d",M);\par
+        col(7);\par
+        printf(" nombres",M);\par
+        col(4);\par
+        printf(" mal");\par
+        col(7);\par
+        printf(" places\\n", M);\par
+    \} else \{\par
+           printf("Il y'a");\par
+        col(2);\par
+        printf(" %d",B);\par
+        col(7);\par
+        printf(" nombres");\par
+        col(2);\par
+        printf(" bien");\par
+        col(7);\par
+        printf(" places\\n");\par
+        printf("Il y'a");\par
+        col(4);\par
+        printf(" %d",M);\par
+        col(7);\par
+        printf(" nombres",M);\par
+        col(4);\par
+        printf(" mal");\par
+        col(7);\par
+        printf(" places\\n", M);\par
+\par
+        if (tantative < 20 && B!=5) \{\par
+            tantative++;\par
+            Score = Score - 20;\par
+            goto AGAIN;\par
+        \} else \{\par
+            printf("Tu as");\par
+            col(4);\par
+            printf(" perdu");\par
+            col(7);\par
+            printf(", bonne chance la prochaine fois\\n");\par
+            Score = Score - 20;\par
+        \}\par
+    \}\par
+\par
+    \}\par
+    else if (selectedOption == 3)\{  //still a problem in if the user enter two nomber (not a chiffre) and i will fix it and send you the updeated one\par
+    char U[6], V[6],chiffre2;       // and o another problem if the player 2 enter th same number in all cases and i will fix it as well\par
+    int i, B, M, tentative, d, utilise,  CASE;\par
+    tentative = 1;\par
+    utilise = 0;\par
+    Score = 500;\par
+    col(4);\par
+printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    sleep(1);\par
+    system("cls");\par
+    col(6);\par
+    printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##     ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t       ## \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t #######  \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##        \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t##        \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t######### \\n");\par
+    sleep(1);\par
+    system("cls");\par
+    col(2);\par
+  printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t ####   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t   ##   \\n");\par
+    printf("\\t\\t\\t\\t\\t\\t ###### \\n");\par
+    sleep(1);\par
+    system("cls");\par
+     printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+     col(7);\par
+        printf("\\t\\t\\t\\t\\##      ## ######## ##        ######   #######  ##     ## ######## \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##    ## ##     ## ###   ### ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##       ##     ## #### #### ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ######   ##       ##       ##     ## ## ### ## ######   \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##       ##     ## ##     ## ##       \\n");\par
+        printf("\\t\\t\\t\\t\\##  ##  ## ##       ##       ##    ## ##     ## ##     ## ##       \\n");\par
+        printf("\\t\\t\\t\\t\\ ###  ###  ######## ########  ######   #######  ##     ## ######## \\n\\n\\n\\n");\par
+        sleep(1);\par
+system("cls");\par
+printf("\\n\\n\\n\\n\\n\\n\\n\\n\\n");\par
+ printf("\\t\\t\\t\\t\\##    ## #### ##     ## ########    ###    ##     ##");\par
+        col(4);\par
+        printf("    #######  \\n");\par
+        col(7);\par
+        printf("\\t\\t\\t\\t\\###   ##  ##  ##     ## ##         ## ##   ##     ##");\par
+        col(4);\par
+        printf("   ##     ## \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\####  ##  ##  ##     ## ##        ##   ##  ##     ##");\par
+        col(4);\par
+        printf("          ## \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\## ## ##  ##  ##     ## ######   ##     ## ##     ##");\par
+        col(4);\par
+        printf("    #######  \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\##  ####  ##   ##   ##  ##       ######### ##     ##");\par
+        col(4);\par
+        printf("          ## \\n");\par
+         col(7);\par
+        printf("\\t\\t\\t\\t\\##   ###  ##    ## ##   ##       ##     ## ##     ##");\par
+        col(4);\par
+        printf("   ##     ## \\n");\par
+         col(7);\par
+          printf("\\t\\t\\t\\t\\##    ## ####    ###    ######## ##     ##  ####### ");\par
+        col(4);\par
+        printf("    #######  \\n");\par
+         col(7);\par
+         printf("\\n\\n\\n");\par
+system("pause");\par
+system("cls");\par
+\par
+    printf("Bonjour Joueur 1, entrez les 5 valeurs du tableau U:\\n");\par
+ for (i = 0; i < 5; i++) \{\par
+    getchar();\par
+    printf("-----");col(6); printf("> ");col(7);\par
+    scanf("%c", &U[i]);\par
+\par
+    while (!isdigit(U[i]) && U[i] != ' ' && U[i] != '#') \{\par
+        printf("Invalid input. Please enter only numeric characters (0-9) or space.\\n");\par
+        printf("-----");col(6); printf("> ");col(7);\par
+        getchar();\par
+        scanf("%c", &U[i]);\par
+    \}\par
+\}\par
+\par
+\par
+\par
+    system("cls");\par
+\par
+    printf("Bonjour Joueur 2\\n");\par
+\par
+    AGAIN2:\par
+    B = 0;\par
+    M = 0;\par
+\par
+    printf("Essayez de deviner les chiffres du tableau U");\par
+    col(13);\par
+    printf(" (%d/20)\\n", tentative);\par
+    col(7);\par
+\par
+    for (i = 0; i < 5; i++) \{\par
+    getchar();\par
+   printf("-----");col(6); printf("> ");col(7);\par
+    scanf("%c", &V[i]);\par
+\par
+    while (!isdigit(V[i]) && V[i] != ' ' && V[i] != '#')  \{\par
+        printf("Invalid input. Please enter only numeric characters (0-9) or space.\\n");\par
+        getchar();\par
+        printf("-----");col(6); printf("> ");col(7);\par
+        scanf("%c", &V[i]);\par
+    \}\par
+\par
+\par
+        chiffre2 = V[i];\par
+\par
+        while (chiffre2 == '#') \{\par
+            if (tentative >= 10 && tentative <= 17) \{\par
+                Joker2(&CASE, &tentative, &utilise, &chiffre2, U);\par
+                printf("-----");col(6); printf("> ");col(7);\par
+                scanf("%c", &chiffre2);\par
+                getchar();\par
+            \} else \{\par
+                printf("D\'e9sol\'e9, Vous ne pouvez pas utiliser le joker dans ce tentatif\\n");\par
+                getchar();\par
+                printf("-----");col(6); printf("> ");col(7);\par
+                scanf("%c", &chiffre2);\par
+\par
+            \}\par
+        \}\par
+\par
+        V[i] = chiffre2;\par
+\par
+        if (U[i] == V[i]) \{\par
+            V[i] = PLACEHOLDER2;\par
+            B++;\par
+        \}\par
+    \}\par
+\par
+   // Check for numbers in the wrong position\par
+for (i = 0; i < 5; i++) \{\par
+    if (U[i] != V[i]) \{\par
+        for (d = 0; d < 5; d++) \{\par
+            if (U[i] == V[d] && d != i && V[d] != PLACEHOLDER2 && V[i] != PLACEHOLDER2) \{\par
+                // Check if the number is not already marked as correctly placed (B)\par
+                V[d] = PLACEHOLDER;\par
+                M++;\par
+                break;\par
+            \}\par
+        \}\par
+    \}\par
+\}\par
+\par
+\par
+    if (B == 5) \{\par
+        printf("F\'e9licitations, c'est ");\par
+        col(2);\par
+        printf("correct!\\n");\par
+        col(7);\par
+        printf("Il y'a");\par
+        col(2);\par
+        printf(" %d",B);\par
+        col(7);\par
+        printf(" nombres");\par
+        col(2);\par
+        printf(" bien");\par
+        col(7);\par
+        printf(" places\\n");\par
+        printf("Il y'a");\par
+        col(4);\par
+        printf(" %d",M);\par
+        col(7);\par
+        printf(" nombres",M);\par
+        col(4);\par
+        printf(" mal");\par
+        col(7);\par
+        printf(" places\\n", M);\par
+    \} else \{\par
+         printf("Il y'a");\par
+        col(2);\par
+        printf(" %d",B);\par
+        col(7);\par
+        printf(" nombres");\par
+        col(2);\par
+        printf(" bien");\par
+        col(7);\par
+        printf(" places\\n");\par
+        printf("Il y'a");\par
+        col(4);\par
+        printf(" %d",M);\par
+        col(7);\par
+        printf(" nombres",M);\par
+        col(4);\par
+        printf(" mal");\par
+        col(7);\par
+        printf(" places\\n", M);\par
+\par
+        if (tentative < 20 && B != 5) \{\par
+            tentative++;\par
+            Score = Score - 25;\par
+            goto AGAIN2;\par
+        \} else \{\par
+            printf("Tu as");\par
+            col(4);\par
+            printf(" perdu");\par
+            col(7);\par
+            printf(", bonne chance la prochaine fois\\n");\par
+            Score = Score - 25;\par
+        \}\par
+    \}\}\par
+\par
+  FILE *fichier;\par
+\par
+    // Open file for writing\par
+    fichier = fopen("score.txt", "a");\par
+    if (fichier == NULL)\{\par
+        printf("error");\par
+        exit(EXIT_FAILURE);\par
+    \}\par
+    fprintf(fichier,"--< %s >-------------< %s >--------------< %d >-----------------< Niveau %d >-------------< %02d : %02d : %02d >-------\\n",nom1,nom2,Score,selectedOption,current_time->tm_hour,current_time->tm_min,current_time->tm_sec);\par
+    fclose(fichier);\par
+begin2 :\par
+ system("pause");\par
+\par
+\par
+\par
+int key3 , menu2 = 1;\par
+\par
+    do \{\par
+        system("cls");\par
+        printMenu3(menu2);\par
+        key3 = getch();\par
+        switch (key3) \{\par
+            case UP_ARROW:\par
+                menu2 = (menu2 > 1) ? (menu2 - 1) : 3;\par
+                break;\par
+            case DOWN_ARROW:\par
+                menu2 = (menu2 < 3) ? (menu2 + 1) : 1;\par
+                break;\par
+        \}\par
+\par
+    \} while (key3 != ENTER);\par
+\par
+    if (menu2 == 1)\{\par
+        continue;\par
+    \}else if(menu2 == 2)\{\par
+        system("cls");\par
+  fichier = fopen("score.txt", "r");\par
+    if (fichier == NULL)\{\par
+        printf("error");\par
+        exit(EXIT_FAILURE);\par
+    \}\par
+char line[100];\par
+\par
+if (fscanf(fichier,"%s",line) !=1)\{\par
+    printf("error2");\par
+    exit(EXIT_FAILURE);\par
+\} while (fscanf(fichier, " %[^\\n]", line) == 1) \{\par
+        printf("%s\\n", line);col(6);\par
+        printf("|---------------|------------------------|----------------------|-------------------------|----------------------------|\\n");col(7);\}\par
+fclose(fichier);col(9);\par
+        printf("    Jouer 1              Jouer 2                 Score                    Niveau                Le temps ou il a joue\\n");col(6);\par
+        printf("|---------------|------------------------|----------------------|-------------------------|----------------------------|\\n");col(7);\par
+\par
+goto begin2;\par
+    \}else if (menu2 == 3)\{\par
+    exit(0);\}\par
+\par
+    \} while (1);\par
+\par
+    return 0;\}\par
+}
+ 
